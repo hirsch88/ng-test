@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  name = 'Pippen';
+  form = this.fb.group({
+    select: null,
+  })
 
-  onButtonClick() {
-    console.warn('click!')
-    this.name = 'Jordan';
-  }
+  constructor(private fb: FormBuilder) { }
+
 }
